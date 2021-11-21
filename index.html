@@ -1,6 +1,234 @@
 <!doctype html>
 <html>
-<body>
-<p style="font-size:20vw">想屁吃</p>
-</body>
+  <head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- MDUI CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+  integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+  crossorigin="anonymous"
+/>
+
+<!-- MDUI JavaScript -->
+<script
+  src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+  integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+  crossorigin="anonymous"
+></script>
+<meta charset="utf-8"><title>C++ 从入门到入坟</title>
+  </head>
+  <body>
+  <header class="mdui-appbar mdui-shadow-0 mdui-appbar-fixed mdui-color-transparent">
+    <div class="mdui-toolbar">
+      <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}">
+        <i class="mdui-icon material-icons">menu</i>
+      </span>
+
+      <a class="mdui-typo-title">C++ 从入门到入坟</a>
+      <div class="mdui-toolbar-spacer"></div>
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=422977832&auto=0&height=66"></iframe>
+
+      </a>
+    </div>
+  </header>
+  <body  style="background: url(http://m.qpic.cn/psc?/V106XtJT3wO9mS/45NBuzDIW489QBoVep5mcbDqn086IFJeCoT5o1lmF0KaChpZfso3cfOxQdt0eeltn0hcgpHjUAIQ1Ouz2lMqPlctjAwlkNhLjOCY0AxGZwU!/b&bo=gAc4BAAAAAADhxk!&rf=viewer_4&t=5) no-repeat center center ;background-attachment: fixed;" class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-auto mdui-loaded">
+    <div class="mdui-drawer" id="main-drawer">
+      <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
+              <div class="mdui-collapse-item ">
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+              <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">near_me</i>
+              <div class="mdui-list-item-content">总述</div>
+              <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+            </div>
+            <div class="mdui-collapse-item-body mdui-list">
+                          <a href="./introduction" class="mdui-list-item mdui-ripple ">简介</a>
+                                      <a href="./download" class="mdui-list-item mdui-ripple ">K0 开发环境部署</a>
+                                      <a href="./compatibility" class="mdui-list-item mdui-ripple ">K0 程序基本结构</a>
+                                  </div>
+          </div>
+              <div class="mdui-collapse-item ">
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+              <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">widgets</i>
+              <div class="mdui-list-item-content">功能</div>
+              <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+            </div>
+            <div class="mdui-collapse-item-body mdui-list">
+                          <a href="./color" class="mdui-list-item mdui-ripple ">K0 变量类型与声明</a>
+                                      <a href="./font" class="mdui-list-item mdui-ripple ">K0 基本运算符</a>
+                                      <a href="./grid" class="mdui-list-item mdui-ripple ">K0 输入输出流</a>
+                                      <a href="./typo" class="mdui-list-item mdui-ripple ">K1 循环和判断</a>
+                                      <a href="./icon" class="mdui-list-item mdui-ripple ">K1 函数</a>
+                                      <a href="./media" class="mdui-list-item mdui-ripple ">K2 数组与结构</a>
+                                      <a href="./media" class="mdui-list-item mdui-ripple ">K2 作用域和重载</a>
+                                      <a href="./helper" class="mdui-list-item mdui-ripple ">K3 引用和指针</a>
+                                      <a href="./shadow" class="mdui-list-item mdui-ripple ">K3 类与对象</a>
+                                      <a href="./media" class="mdui-list-item mdui-ripple ">K4 字符串</a>
+                                      <a href="./media" class="mdui-list-item mdui-ripple ">K4 类的继承与派生</a>
+                                      <a href="./media" class="mdui-list-item mdui-ripple ">K4 抽象类 多态类</a>
+                                      <a href="./media" class="mdui-list-item mdui-ripple ">K4 栈和堆 数据结构</a>
+                                  </div>
+          </div>
+              <div class="mdui-collapse-item">
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+              <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">layers</i>
+              <div class="mdui-list-item-content">算法</div>
+              <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+            </div>
+            <div class="mdui-collapse-item-body mdui-list">
+                          <a href="./ripple" class="mdui-list-item mdui-ripple ">涟漪动画效果</a>
+                                      <a href="./button" class="mdui-list-item mdui-ripple ">按钮</a>
+                                      <a href="./fab" class="mdui-list-item mdui-ripple ">浮动操作按钮</a>
+                                      <a href="./select" class="mdui-list-item mdui-ripple ">下拉选择</a>
+                                      <a href="./divider" class="mdui-list-item mdui-ripple ">分隔线</a>
+                                      <a href="./panel" class="mdui-list-item mdui-ripple">可扩展面板</a>
+                             <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+                                      <a href="./textfield" class="mdui-list-item mdui-ripple ">文本框</a>
+                                      <a href="./selection_control" class="mdui-list-item mdui-ripple ">选择控件</a>
+                                      <a href="./slider" class="mdui-list-item mdui-ripple ">滑块</a>
+                                      <a href="./list" class="mdui-list-item mdui-ripple ">列表</a>
+                                      <a href="./list_control" class="mdui-list-item mdui-ripple ">列表控制</a>
+                                      <a href="./grid_list" class="mdui-list-item mdui-ripple ">网格列表</a>
+                                      <a href="./tab" class="mdui-list-item mdui-ripple ">Tab 选项卡</a>
+                                      <a href="./toolbar" class="mdui-list-item mdui-ripple ">工具栏</a>
+                                      <a href="./appbar" class="mdui-list-item mdui-ripple ">应用栏</a>
+                                      <a href="./drawer" class="mdui-list-item mdui-ripple ">抽屉式导航</a>
+                                      <a href="./bottom_nav" class="mdui-list-item mdui-ripple ">底部导航栏</a>
+                                      <a href="./card" class="mdui-list-item mdui-ripple ">卡片</a>
+                                      <a href="./chip" class="mdui-list-item mdui-ripple ">纸片</a>
+                                      <a href="./tooltip" class="mdui-list-item mdui-ripple ">工具提示</a>
+                                      <a href="./snackbar" class="mdui-list-item mdui-ripple ">Snackbar</a>
+                                      <a href="./table" class="mdui-list-item mdui-ripple ">表格</a>
+                                      <a href="./dialog" class="mdui-list-item mdui-ripple ">对话框</a>
+                                      <a href="./menu" class="mdui-list-item mdui-ripple ">菜单</a>
+                                      <a href="./progress" class="mdui-list-item mdui-ripple ">进度指示器</a>
+                                  </div>
+          </div>
+              <div class="mdui-collapse-item ">
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+              <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">view_carousel</i>
+              <div class="mdui-list-item-content">架构</div>
+              <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+            </div>
+            <div class="mdui-collapse-item-body mdui-list">
+                          <a href="./collapse" class="mdui-list-item mdui-ripple ">Collapse</a>
+                                      <a href="./headroom" class="mdui-list-item mdui-ripple ">Headroom</a>
+                                  </div>
+          </div>
+              <div class="mdui-collapse-item ">
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+              <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">local_mall</i>
+              <div class="mdui-list-item-content">资源与常见问题</div>
+              <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+            </div>
+            <div class="mdui-collapse-item-body mdui-list">
+                          <a href="./material_icon" class="mdui-list-item mdui-ripple ">Material 图标</a>
+                                  </div>
+          </div>
+          </div>
+    </div>
+
+
+
+
+
+
+<div>
+    <div class="mdui-container doc-container">
+      <h1 class="doc-title mdui-text-color-theme">总述</h1>
+
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">简介 <a class="doc-anchor" id="style"></a></h2>
+
+          <h4 class="doc-article-title">C++是什么？<a class="doc-anchor" id="basic"></a></h4>
+          <p><del>C++是一种面向对象的编程语言。</del><br><strong>C++是一个脑残设计出的专业课，让我被调剂到这个天杀的专业之后天天因为它受气。</strong></p>
+
+          <h4 class="doc-article-title">为什么C++很重要？<a class="doc-anchor" id="basic"></a></h4>
+          <p><del>首先要认识C++是一个“万金油”式的编程语言，同时它也在吸纳各种Modern的编程语言特性。使得它可以实现从计算机底层到应用层的全方面</del><br>
+            <ul>
+            <li><p><strong>这样才有人买那几本破书。</strong></p></li>
+            <li><p><strong>你以为学校控挂科率是怎么控的？</strong></p></li>
+            <li><p><strong>你需要学好C++来转专业、保研、跨专业考研，否则你一辈子都要跟这破玩意打交道。</strong></p></li>
+            <li><p><strong>就算你转会计金融也得学计算机，长痛不如短痛。</strong></p></li>
+            <li><p><strong>如果你不学好C++，那就做好准备学大物吧。</strong></p></li>
+          </ul>
+          <ul>
+            <li><p>（做最坏的打算，就假设你从这破专业，本科出去了，你总能有个饭碗。）</p></li>
+          </ul>
+        </div>
+
+        <div class="mdui-typo">
+          <h4 class="doc-article-title">行吧，那我怎么学？<a class="doc-anchor" id="background"></a></h4>
+          <p>首先，让我们来做一个测试，来为你定制需要看的内容。</p>
+          <ul>
+            <li><p>K0：我没咋上过李洋的课。</p></li>
+            <li><p>K1：我对C++有着模糊、松散的认识，每一块都会一点，可又不完全会。</p></li>
+            <li><p>K2：我对C++每一章的内容有一些了解，也掌握了一些难点，可是不照着例子就写不出程序来。</p></li>
+            <li><p>K2：我知道C++的基本语法，也能解一些.简单的题目，可题目稍微一复杂，我就发懵。</p></li>
+            <li><p>K3：我已经掌握了解编程题的基本方法，但对一些知识点还缺乏了解。</p></li>
+            <li><p>K4：我已经能独立解决所有C++作业了。</p></li>
+          </ul>
+          <p>从“总述”到“架构”挨个看，从K0看，K0看完看K1，一直看到K4，有兴趣也可以看KX。</p>
+          <p>具体怎么看都行，着急的话一天看完也行，或者一天看一节两节也行。</p>
+          <p>看完你估计就能会了。</p>
+        </div>
+      </div>
+
+
+
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">开发环境部署<a class="doc-anchor" id="style"></a></h2>
+
+          <h4 class="doc-article-title">C++是什么？<a class="doc-anchor" id="basic"></a></h4>
+          <p><del>C++是一种面向对象的编程语言。</del><br><strong>C++是一个脑残设计出的专业课，让我被调剂到这个天杀的专业之后天天因为它受气。</strong></p>
+
+          <h4 class="doc-article-title">为什么C++很重要？<a class="doc-anchor" id="basic"></a></h4>
+          <p><del>首先要认识C++是一个“万金油”式的编程语言，同时它也在吸纳各种Modern的编程语言特性。使得它可以实现从计算机底层到应用层的全方面</del><br>
+            <ul>
+            <li><p><strong>这样才有人买那几本破书。</strong></p></li>
+            <li><p><strong>你以为学校控挂科率是怎么控的？</strong></p></li>
+            <li><p><strong>你需要学好C++来转专业、保研、跨专业考研，否则你一辈子都要跟这破玩意打交道。</strong></p></li>
+            <li><p><strong>就算你转会计金融也得学计算机，长痛不如短痛。</strong></p></li>
+            <li><p><strong>如果你不学好C++，那就做好准备学大物吧。</strong></p></li>
+          </ul>
+          <ul>
+            <li><p>（做最坏的打算，就假设你从这破专业，本科出去了，你总能有个饭碗。）</p></li>
+          </ul>
+        </div>
+
+        <div class="mdui-typo">
+          <h4 class="doc-article-title">行吧，那我怎么学？<a class="doc-anchor" id="background"></a></h4>
+          <p>首先，让我们来做一个测试，来为你定制需要看的内容。</p>
+          <ul>
+            <li><p>K0：我没咋上过李洋的课。</p></li>
+            <li><p>K1：我对C++有着模糊、松散的认识，每一块都会一点，可又不完全会。</p></li>
+            <li><p>K2：我对C++每一章的内容有一些了解，也掌握了一些难点，可是不照着例子就写不出程序来。</p></li>
+            <li><p>K2：我知道C++的基本语法，也能解一些.简单的题目，可题目稍微一复杂，我就发懵。</p></li>
+            <li><p>K3：我已经掌握了解编程题的基本方法，但对一些知识点还缺乏了解。</p></li>
+            <li><p>K4：我已经能独立解决所有C++作业了。</p></li>
+          </ul>
+          <p>从“总述”到“架构”挨个看，从K0看，K0看完看K1，一直看到K4，有兴趣也可以看KX。</p>
+          <p>具体怎么看都行，着急的话一天看完也行，或者一天看一节两节也行。</p>
+          <p>看完你估计就能会了。</p>
+        </div>
+      </div>
+      
+
+
+
+
+
+
+
+
+    </div>
+
+  </div>
+  </body></body>
+
 </html>
