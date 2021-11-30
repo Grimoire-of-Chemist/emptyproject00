@@ -1,6 +1,27 @@
 <!doctype html>
 <html>
   <head>
+    <script>
+MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], //行内公式选择符
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]], //段内公式选择符
+        skipTags: ["script", "noscript", "style"] //避开某些标签
+    },
+    options: {
+        skipHtmlTags: [ // HTML tags that won't be searched for math
+            'script', 'noscript', 'style'
+        ],
+        includeHtmlTags: { // HTML tags that can appear within math
+            br: '\n', wbr: '', '#comment': ''
+        },
+        ignoreHtmlClass: 'raw-content', // class that marks tags not to search
+        processHtmlClass: 'render-content', // class that marks tags that should be    ˓→searched
+        compileError: function (doc, math, err) {doc.compileError(math, err)},
+        typesetError: function (doc, math, err) {doc.typesetError(math, err)}
+    }
+};
+
+    </script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <!-- MDUI CSS -->
@@ -33,7 +54,7 @@
       </a>
     </div>
   </header>
-  <body  style="background: url(http://m.qpic.cn/psc?/V106XtJT3wO9mS/45NBuzDIW489QBoVep5mcbDqn086IFJeCoT5o1lmF0KaChpZfso3cfOxQdt0eeltn0hcgpHjUAIQ1Ouz2lMqPlctjAwlkNhLjOCY0AxGZwU!/b&bo=gAc4BAAAAAADhxk!&rf=viewer_4&t=5) no-repeat center center ;background-attachment: fixed;" class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-auto mdui-loaded">
+  <body  style="background:rgba(0,0,0,1) url(http://m.qpic.cn/psc?/V106XtJT3wO9mS/45NBuzDIW489QBoVep5mcbDqn086IFJeCoT5o1lmF0KaChpZfso3cfOxQdt0eeltn0hcgpHjUAIQ1Ouz2lMqPlctjAwlkNhLjOCY0AxGZwU!/b&bo=gAc4BAAAAAADhxk!&rf=viewer_4&t=5) no-repeat center center ;background-attachment: fixed;" class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-auto mdui-loaded">
     <div class="mdui-drawer" id="main-drawer">
       <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
               <div class="mdui-collapse-item ">
@@ -43,9 +64,9 @@
               <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
             </div>
             <div class="mdui-collapse-item-body mdui-list">
-                          <a href="./introduction" class="mdui-list-item mdui-ripple ">简介</a>
-                                      <a href="./download" class="mdui-list-item mdui-ripple ">K0 开发环境部署</a>
-                                      <a href="./compatibility" class="mdui-list-item mdui-ripple ">K0 程序基本结构</a>
+                          <a href="#K-1" class="mdui-list-item mdui-ripple ">简介</a>
+                                      <a href="#K00" class="mdui-list-item mdui-ripple ">K0 开发环境部署</a>
+                                      <a href="#K01" class="mdui-list-item mdui-ripple ">K0 程序基本结构</a>
                                   </div>
           </div>
               <div class="mdui-collapse-item ">
@@ -55,19 +76,19 @@
               <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
             </div>
             <div class="mdui-collapse-item-body mdui-list">
-                          <a href="./color" class="mdui-list-item mdui-ripple ">K0 变量类型与声明</a>
-                                      <a href="./font" class="mdui-list-item mdui-ripple ">K0 基本运算符</a>
-                                      <a href="./grid" class="mdui-list-item mdui-ripple ">K0 输入输出流</a>
-                                      <a href="./typo" class="mdui-list-item mdui-ripple ">K1 循环和判断</a>
-                                      <a href="./icon" class="mdui-list-item mdui-ripple ">K1 函数</a>
-                                      <a href="./media" class="mdui-list-item mdui-ripple ">K2 数组与结构</a>
-                                      <a href="./media" class="mdui-list-item mdui-ripple ">K2 作用域和重载</a>
-                                      <a href="./helper" class="mdui-list-item mdui-ripple ">K3 引用和指针</a>
-                                      <a href="./shadow" class="mdui-list-item mdui-ripple ">K3 类与对象</a>
-                                      <a href="./media" class="mdui-list-item mdui-ripple ">K4 字符串</a>
-                                      <a href="./media" class="mdui-list-item mdui-ripple ">K4 类的继承与派生</a>
-                                      <a href="./media" class="mdui-list-item mdui-ripple ">K4 抽象类 多态类</a>
-                                      <a href="./media" class="mdui-list-item mdui-ripple ">K4 栈和堆 数据结构</a>
+                          <a href="#K02" class="mdui-list-item mdui-ripple ">K0 变量类型与声明</a>
+                                      <a href="#K03" class="mdui-list-item mdui-ripple ">K0 基本运算符</a>
+                                      <a href="#K04" class="mdui-list-item mdui-ripple ">K0 输入输出流</a>
+                                      <a href="#K11" class="mdui-list-item mdui-ripple ">K1 循环和判断</a>
+                                      <a href="#K12" class="mdui-list-item mdui-ripple ">K1 函数</a>
+                                      <a href="#K20" class="mdui-list-item mdui-ripple ">K2 数组与结构体</a>
+                                      <a href="#K21" class="mdui-list-item mdui-ripple ">K2 作用域和重载 预处<br>理指令 多文件结构 </a>
+                                      <a href="#K30" class="mdui-list-item mdui-ripple ">K3 引用和指针</a>
+                                      <a href="#K31" class="mdui-list-item mdui-ripple ">K3 类与对象</a>
+                                      <a href="#K40" class="mdui-list-item mdui-ripple ">K4 字符串</a>
+                                      <a href="#K41" class="mdui-list-item mdui-ripple ">K4 类的继承与派生</a>
+                                      <a href="#K42" class="mdui-list-item mdui-ripple ">K4 抽象类 类的多态</a>
+                                      <a href="#K43" class="mdui-list-item mdui-ripple ">K4 栈和队列</a>
                                   </div>
           </div>
               <div class="mdui-collapse-item">
@@ -77,34 +98,15 @@
               <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
             </div>
             <div class="mdui-collapse-item-body mdui-list">
-                          <a href="./ripple" class="mdui-list-item mdui-ripple ">涟漪动画效果</a>
-                                      <a href="./button" class="mdui-list-item mdui-ripple ">按钮</a>
-                                      <a href="./fab" class="mdui-list-item mdui-ripple ">浮动操作按钮</a>
-                                      <a href="./select" class="mdui-list-item mdui-ripple ">下拉选择</a>
-                                      <a href="./divider" class="mdui-list-item mdui-ripple ">分隔线</a>
-                                      <a href="./panel" class="mdui-list-item mdui-ripple">可扩展面板</a>
-                             <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-                                      <a href="./textfield" class="mdui-list-item mdui-ripple ">文本框</a>
-                                      <a href="./selection_control" class="mdui-list-item mdui-ripple ">选择控件</a>
-                                      <a href="./slider" class="mdui-list-item mdui-ripple ">滑块</a>
-                                      <a href="./list" class="mdui-list-item mdui-ripple ">列表</a>
-                                      <a href="./list_control" class="mdui-list-item mdui-ripple ">列表控制</a>
-                                      <a href="./grid_list" class="mdui-list-item mdui-ripple ">网格列表</a>
-                                      <a href="./tab" class="mdui-list-item mdui-ripple ">Tab 选项卡</a>
-                                      <a href="./toolbar" class="mdui-list-item mdui-ripple ">工具栏</a>
-                                      <a href="./appbar" class="mdui-list-item mdui-ripple ">应用栏</a>
-                                      <a href="./drawer" class="mdui-list-item mdui-ripple ">抽屉式导航</a>
-                                      <a href="./bottom_nav" class="mdui-list-item mdui-ripple ">底部导航栏</a>
-                                      <a href="./card" class="mdui-list-item mdui-ripple ">卡片</a>
-                                      <a href="./chip" class="mdui-list-item mdui-ripple ">纸片</a>
-                                      <a href="./tooltip" class="mdui-list-item mdui-ripple ">工具提示</a>
-                                      <a href="./snackbar" class="mdui-list-item mdui-ripple ">Snackbar</a>
-                                      <a href="./table" class="mdui-list-item mdui-ripple ">表格</a>
-                                      <a href="./dialog" class="mdui-list-item mdui-ripple ">对话框</a>
-                                      <a href="./menu" class="mdui-list-item mdui-ripple ">菜单</a>
-                                      <a href="./progress" class="mdui-list-item mdui-ripple ">进度指示器</a>
+                                      <a href="#K13" class="mdui-list-item mdui-ripple ">K1 简单循环判断</a>
+                                      <a href="#K14" class="mdui-list-item mdui-ripple ">K1 递归 </a>
+                                      <a href="#K15" class="mdui-list-item mdui-ripple ">K1 暴力枚举</a>
+                                      <a href="#K22" class="mdui-list-item mdui-ripple ">K2 冒泡排序</a>
+                                      <a href="#K32" class="mdui-list-item mdui-ripple">K3 动态规划</a>
+                                      <a href="#K44" class="mdui-list-item mdui-ripple">K4 线性表 栈和队列</a>
+                                      <a href="#KX1" class="mdui-list-item mdui-ripple ">KX 广度/深度优先搜索</a>
+                                      <a href="#KX2" class="mdui-list-item mdui-ripple ">KX 树</a>
+
                                   </div>
           </div>
               <div class="mdui-collapse-item ">
@@ -114,8 +116,9 @@
               <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
             </div>
             <div class="mdui-collapse-item-body mdui-list">
-                          <a href="./collapse" class="mdui-list-item mdui-ripple ">Collapse</a>
-                                      <a href="./headroom" class="mdui-list-item mdui-ripple ">Headroom</a>
+                          <a href="#K33" class="mdui-list-item mdui-ripple ">K3 时间/空间复杂度<br>算法优化</a>
+                         <a href="#K34" class="mdui-list-item mdui-ripple ">K3 内联函数 预定义</a>
+                                      <a href="#K35" class="mdui-list-item mdui-ripple ">K3 高内聚低耦合的原则<br>程序的模块化</a>
                                   </div>
           </div>
               <div class="mdui-collapse-item ">
@@ -125,9 +128,11 @@
               <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
             </div>
             <div class="mdui-collapse-item-body mdui-list">
-                          <a href="./material_icon" class="mdui-list-item mdui-ripple ">Material 图标</a>
+                          <a href="#Katerial_icon" class="mdui-list-item mdui-ripple ">Visual Studio编译相关</a>
+                          <a href="#Katerial_icon" class="mdui-list-item mdui-ripple ">变量和作用域相关</a>
                                   </div>
-          </div>
+          </div> 
+        
           </div>
     </div>
 
@@ -138,30 +143,14 @@
 
 <div>
     <div class="mdui-container doc-container">
-      <h1 class="doc-title mdui-text-color-theme">总述</h1>
 
       <div class="doc-chapter">
         <div class="mdui-typo">
-          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">简介 <a class="doc-anchor" id="style"></a></h2>
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K-1">简介 <a class="doc-anchor" id="style"></a></h2>
 
           <h4 class="doc-article-title">C++是什么？<a class="doc-anchor" id="basic"></a></h4>
           <p><del>C++是一种面向对象的编程语言。</del><br><strong>C++是一个脑残设计出的专业课，让我被调剂到这个天杀的专业之后天天因为它受气。</strong></p>
 
-          <h4 class="doc-article-title">为什么C++很重要？<a class="doc-anchor" id="basic"></a></h4>
-          <p><del>首先要认识C++是一个“万金油”式的编程语言，同时它也在吸纳各种Modern的编程语言特性。使得它可以实现从计算机底层到应用层的全方面</del><br>
-            <ul>
-            <li><p><strong>这样才有人买那几本破书。</strong></p></li>
-            <li><p><strong>你以为学校控挂科率是怎么控的？</strong></p></li>
-            <li><p><strong>你需要学好C++来转专业、保研、跨专业考研，否则你一辈子都要跟这破玩意打交道。</strong></p></li>
-            <li><p><strong>就算你转会计金融也得学计算机，长痛不如短痛。</strong></p></li>
-            <li><p><strong>如果你不学好C++，那就做好准备学大物吧。</strong></p></li>
-          </ul>
-          <ul>
-            <li><p>（做最坏的打算，就假设你从这破专业，本科出去了，你总能有个饭碗。）</p></li>
-          </ul>
-        </div>
-
-        <div class="mdui-typo">
           <h4 class="doc-article-title">行吧，那我怎么学？<a class="doc-anchor" id="background"></a></h4>
           <p>首先，让我们来做一个测试，来为你定制需要看的内容。</p>
           <ul>
@@ -172,9 +161,7 @@
             <li><p>K3：我已经掌握了解编程题的基本方法，但对一些知识点还缺乏了解。</p></li>
             <li><p>K4：我已经能独立解决所有C++作业了。</p></li>
           </ul>
-          <p>从“总述”到“架构”挨个看，从K0看，K0看完看K1，一直看到K4，有兴趣也可以看KX。</p>
-          <p>具体怎么看都行，着急的话一天看完也行，或者一天看一节两节也行。</p>
-          <p>看完你估计就能会了。</p>
+          <p>可以直接按本文顺序看，也可以在左边列表里选看，一直看到K4，有兴趣也可以看KX。</p>
         </div>
       </div>
 
@@ -182,53 +169,888 @@
 
       <div class="doc-chapter">
         <div class="mdui-typo">
-          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">开发环境部署<a class="doc-anchor" id="style"></a></h2>
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K00">开发环境部署<a class="doc-anchor" id="style"></a></h2>
 
-          <h4 class="doc-article-title">C++是什么？<a class="doc-anchor" id="basic"></a></h4>
-          <p><del>C++是一种面向对象的编程语言。</del><br><strong>C++是一个脑残设计出的专业课，让我被调剂到这个天杀的专业之后天天因为它受气。</strong></p>
+          <h4 class="doc-article-title">时兴的IDE<a class="doc-anchor" id="basic"></a></h4>
+          <p>现在时兴两种编程软件，一个是Visual Studio，这个是中文界面，有时候会出bug。<br>另一个是Clion，这个是全英文的（装插件能转中文）。我这边用的Clion。<br>安装遇到问题请随时cue学委。</p>
+<p>下载链接：</p>
+<p>这是Visual Studio的<br><code><a href="https://visualstudio.microsoft.com/zh-hans/thank-you-downloading-visual-studio/?sku=community&rel=17">https://visualstudio.microsoft.com/zh-hans/thank-you-downloading-visual-studio/?sku=community&amp;rel=17</a></code><br>下载完后，选“基于C++”的桌面开发，确定安装，安装得半个多小时好像。</p>
+<p>这是Clion的<br><code><a href="https://download.jetbrains.com/cpp/CLion-2021.2.3.exe">https://download.jetbrains.com/cpp/CLion-2021.2.3.exe</a></code><br>下面是Clion激活和汉化教程：<br><code><a href="https://www.jb51.net/softjc/549051.html">https://www.jb51.net/softjc/549051.html</a></code></p> 
+<h4 class="doc-article-title">IDE中的基本操作<a class="doc-anchor" id="basic"></a></h4>
 
-          <h4 class="doc-article-title">为什么C++很重要？<a class="doc-anchor" id="basic"></a></h4>
-          <p><del>首先要认识C++是一个“万金油”式的编程语言，同时它也在吸纳各种Modern的编程语言特性。使得它可以实现从计算机底层到应用层的全方面</del><br>
             <ul>
-            <li><p><strong>这样才有人买那几本破书。</strong></p></li>
-            <li><p><strong>你以为学校控挂科率是怎么控的？</strong></p></li>
-            <li><p><strong>你需要学好C++来转专业、保研、跨专业考研，否则你一辈子都要跟这破玩意打交道。</strong></p></li>
-            <li><p><strong>就算你转会计金融也得学计算机，长痛不如短痛。</strong></p></li>
-            <li><p><strong>如果你不学好C++，那就做好准备学大物吧。</strong></p></li>
+            <li><p>F5：编译并运行</p></li>
+            <li><p>F10：编译并进入Debug（逐步骤执行）</p></li>
+            <li><p>F11：编译并进入Debug（逐句执行）</p></li>
+            <li><p>Ctrl+Z：撤回上一步操作</p></li>
           </ul>
-          <ul>
-            <li><p>（做最坏的打算，就假设你从这破专业，本科出去了，你总能有个饭碗。）</p></li>
-          </ul>
-        </div>
-
-        <div class="mdui-typo">
-          <h4 class="doc-article-title">行吧，那我怎么学？<a class="doc-anchor" id="background"></a></h4>
-          <p>首先，让我们来做一个测试，来为你定制需要看的内容。</p>
-          <ul>
-            <li><p>K0：我没咋上过李洋的课。</p></li>
-            <li><p>K1：我对C++有着模糊、松散的认识，每一块都会一点，可又不完全会。</p></li>
-            <li><p>K2：我对C++每一章的内容有一些了解，也掌握了一些难点，可是不照着例子就写不出程序来。</p></li>
-            <li><p>K2：我知道C++的基本语法，也能解一些.简单的题目，可题目稍微一复杂，我就发懵。</p></li>
-            <li><p>K3：我已经掌握了解编程题的基本方法，但对一些知识点还缺乏了解。</p></li>
-            <li><p>K4：我已经能独立解决所有C++作业了。</p></li>
-          </ul>
-          <p>从“总述”到“架构”挨个看，从K0看，K0看完看K1，一直看到K4，有兴趣也可以看KX。</p>
-          <p>具体怎么看都行，着急的话一天看完也行，或者一天看一节两节也行。</p>
-          <p>看完你估计就能会了。</p>
+<p>没了。好好学吧。</p>
         </div>
       </div>
       
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K01">程序基本结构<a class="doc-anchor" id="style"></a></h2>
+          <p class="mdui-text-color-red">以下用红色标注的代码块，是你目前无需理解的内容。</p>
+          <p>我们给IDE打开，选择创建控制台应用，他会展示一个最基本的程序：<br>
+
+            <div class="mdui-typo">
+              <pre><p class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</p>int main(){
+<a class="mdui-text-color-red">cout&lt;&lt;"Hello,World!";</a>
+<a class="mdui-text-color-green">//上面的句子输出了Hello,World!</a>
+}</pre>
+            </div></p>
+            <ul>
+            <li><p>这<code>#include &lt;iosteam&gt;</code>意思是该程序包含了iostream库；</p></li>
+            <li><p>这<code>using namespace std;</code>是指，接下来的代码块使用了命名空间std（它被包含在iostram库中）;</p></li>
+            <li><p><code>int main() {}</code>是主函数，它是整个程序的入口。</p></li>
+            <li><p><code>cout&lt;&lt;"Hello,World!";</code>是输出流函数，它把字符串Hello,World!输出到控制台上。</p></li>
+            <li><p>绿色的一行字是注释，它不会被执行，可以用来说明程序某一部分的功能。</p></li>
+          </ul>
+<p>在这些语句中，只有<code>int main() {}</code>是必不可少的，每个程序都由<code>int main() {}</code>开始执行；</p><p>另外，每个语句的结尾，都必须加上一个分号，表示该语句执行完毕。</p>
+<p>我们以后接触到的程序中，大多数都会用到iostream库，所以我们将主要通过改变<code>int main() {}</code>中的内容来调整程序的功能。</p>
+        </div>
+
+
+      </div>
+      
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K02">变量类型与声明<a class="doc-anchor" id="style"></a></h2>
+          <p>编程时需要用到各种变量来存储信息，以下是变量的类型：
+            <ul>
+              <li><p>int：整型，存储整数。</p></li>
+              <li><p>long int：长整型，存储特大整数。</p></li>
+              <li><p>float：浮点型，存储小数。</p></li>
+              <li><p>double：双精度浮点型，存储高位小数。</p></li>
+              <li><p>bool：布尔型，只能存储：true和false。</p></li>
+              <li><p>char：字符型，存储一个字符。</p></li>
+            </ul>
+<p>声明一个变量的语句是：<code>&lt;前缀&gt; &lt;数据类型&gt; [&lt;名称&gt; (= 值)] ……</code></p>
+<p>可以在一个语句中声明多个变量（使用逗号将变量隔开），也可以直接为它们赋值。</p>
+<p>在Visual Studio中，变量的名称可以是中文、英文、沈从文、特立尼达和多巴哥文、数字以及他们的结合。<i class="mdui-text-color-red">需要注意的是，不可以用数字开头。</i><br>（使用中文命名变量、函数等是不好的，可能产生无法预料的错误。以下的程序使用中文命名变量、函数等，是为了方便读者理解。）</p>
+<p>以下是例子：</p>
+            <div class="mdui-typo">
+              <pre>
+int main(){
+float a=6;
+int b=8,c;
+bool d666 = false , e888 = true ;
+long int 吴亦凡,蔡徐坤,肖战;
+}</pre>
+            </div></p>
+            <h4 class="doc-article-title">* 数据的表示法及其范围<a class="doc-anchor" id="basic"></a></h4>
+            <p class="mdui-text-color-blue">这里的内容不是必要的，仅作了解即可。它可能帮助你更好地理解数据的存储方式。</p>
+            <ul>
+              <li><p>int/long int：第一个二进制位存储正负号，0为正1为负。其余位将一个数字用二进制原码表示。</p></li>
+              <li><p>float/double：浮点型分为两部分，前半部分储存2的指数，后半部分储存尾数（二进制小数，1点……），他们相乘即是浮点数。<br>当然同一浮点数可以有不同种表示，如1.5可以表示为0...01|00011...(2¹×0.75)，也可表示为0...10|000011...(2²×0.375)</p></li>
+              <li><p>char：通过二进制的方式存储一个ASCII码。</p></li>
+
+            </ul>
+            <div class="mdui-table-fluid">
+              <table class="mdui-table">
+                <thead>
+                  <tr>
+                    <th>类型</th>
+                    <th>位</th>
+                    <th>表示范围</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>int</td>
+                    <td>4字节</td>
+                    <td>±2147483647（10位数）</td>
+                  </tr>
+                  <tr>
+                    <td>long int</td>
+                    <td>8字节</td>
+                    <td>约±9×10¹⁸（19位数）</td>
+                  </tr>
+                  <tr>
+                    <td>float</td>
+                    <td>4字节</td>
+                    <td>大约小数点后7位</td>
+                  </tr>
+                  <tr>
+                    <td>double</td>
+                    <td>8字节</td>
+                    <td>大约小数点后15位</td>
+                  </tr>
+                  <tr>
+                    <td>char</td>
+                    <td>1字节</td>
+                    <td>一个ASCII码（字母、数字、空格和标点）</td>
+                  </tr>
+                </tbody>
+              </table><br>
+              <p>当一个变量存储的值，超过了它的存储能力时，便会发生溢出。Visual Studio中表现为数字乱码，Clion则会警告可能发生的溢出情况。</p>
+            </div>
+        </div>
+      </div>  
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K03">基本运算符<a class="doc-anchor" id="style"></a></h2>
+          <p>变量可以通过运算符来与其他变量和常量交互，组成表达式来表示一个新的值。</p>
+          <p class="mdui-text-color-blue">我们将所有运算符抽象为函数，便于理解：</p>
+
+          <h4 class="doc-article-title">普通的算术运算符<a class="doc-anchor" id="basic"></a></h4>
+          <table class="mdui-table">
+            <thead>
+              <tr><th>运算符</th><th>表示法</th><th>描述</th><th>对应函数</th></tr>
+            </thead>
+            <tbody><tr><td>+（加）</td><td>a+b</td><td>表示两个数相加</td><td>\(f(a,b)=a+b\)</td></tr>
+              <tr><td>-（减）</td><td>a-b</td><td>表示两个数相减</td><td>\(f(a,b)=a-b\)</td></tr>
+              <tr><td>*（乘）</td><td>a*b</td><td>表示两个数相乘</td><td>\(f(a,b)=a×b\)</td></tr>
+              <tr><td>/（除）</td><td>a/b</td><td>表示两个数相除</td><td>\(f(a,b)=a÷b\)</td></tr>
+              <tr><td>%（余）</td><td>a%b</td><td>表示a除以b的余数</td><td>\(f(a,b)=a \ mod \ b\)</td></tr>
+            </tbody>
+          </table>
+          <h4 class="doc-article-title">关系运算符<a class="doc-anchor" id="basic"></a></h4>
+          <table class="mdui-table">
+            <thead>
+              <tr><th>运算符</th><th>表示法</th><th>描述</th><th>对应函数</th></tr>
+            </thead>
+            <tbody><tr><td>&gt;（是否大于）</td><td>a&gt;b</td><td>如果a大于b，返回true，否则返回false</td><td>\(f(a,b)=\left\{\begin{aligned}1 \ , \ a>b \\ 0 \ , \ a \le b \\\end{aligned}\right.\)</td></tr>
+              <tr><td>&gt;=（是否大于等于）</td><td>a&gt;=b</td><td>如果a大于等于b，返回true，否则返回false</td><td>\(f(a,b)=\left\{\begin{aligned}1 \ , \ a \ge b \\ 0 \ , \ a &lt; b \\\end{aligned}\right.\)</td></tr>
+              <tr><td>==（是否等于）</td><td>a==b</td><td>如果a等于b，返回true，否则返回false</td><td>\(f(a,b)=\left\{\begin{aligned}1 \ , \ a=b \\ 0 \ , \ a \ne b \\\end{aligned}\right.\)</td></tr>
+              <tr><td>!=（是否不等）</td><td>a!=b</td><td>如果a不等于b，返回true，否则返回false</td><td>\(f(a,b)=\left\{\begin{aligned}1 \ , \ a \ne b \\ 0 \ , \ a = b \\\end{aligned}\right.\)</td></tr>
+              <tr><td>&lt;（是否小于）</td><td>a&lt;b</td><td>如果a小于b，返回true，否则返回false</td><td>\(f(a,b)=\left\{\begin{aligned}1 \ , \ a&lt;b \\ 0 \ , \ a \ge b \\\end{aligned}\right.\)</td></tr>
+              <tr><td>&lt;=（是否小于等于）</td><td>a&lt;=b</td><td>如果a小于等于b，返回true，否则返回false</td><td>\(f(a,b)=\left\{\begin{aligned}1 \ , \ a \le b \\ 0 \ , \ a &gt; b \\\end{aligned}\right.\)</td></tr>
+            </tbody>
+          </table>
+<h4 class="doc-article-title">逻辑运算符<a class="doc-anchor" id="basic"></a></h4>
+<table class="mdui-table">
+  <thead>
+    <tr><th>运算符</th><th>表示法</th><th>描述</th><th>对应函数</th></tr>
+  </thead>
+  <tbody><tr><td>&&（和）</td><td>a&&b</td><td>如果a，b都不是false，才返回true，否则返回false</td><td>\(f(a,b)=\left\{\begin{aligned}1 \ , \ a \ne 0 \ 且 \ b \ne 0 \\ 0 \ , \ a=0 \ 或 \ b=0 \\\end{aligned}\right.\)</td></tr>
+    <tr><td>||（或）</td><td>a||b</td><td>a，b中有一个不是false，就返回true，否则返回false</td><td>\(f(a,b)=\left\{\begin{aligned}1 \ , \ a \ne 0 \ 或 \ b \ne 0 \\ 0 \ , \ a=0 \ 且 \ b=0 \\\end{aligned}\right.\)</td></tr>
+    <tr><td>!（非）</td><td>!a</td><td>如果a为0或false，则返回true，否则返回false</td><td>\(f(a,b)=\left\{\begin{aligned}1 \ , \ a=0 \\ 0 \ , \ a \ne 0 \\\end{aligned}\right.\)</td></tr>
+  </tbody>
+</table>
+<p>应当注意的是，这里的==、&lt;等，都是和“加减乘除”等同的，数学运算符号，和表示数字关系的符号“大于、小于”有本质区别。</p>
+<p>一般的运算过程是，先算术，再关系，最后逻辑。算术又可分为先乘除(余)后加减。</p>
+<h4 class="doc-article-title">赋值号、自增号和括号<a class="doc-anchor" id="basic"></a></h4>
+<p>赋值号的作用是，将赋值号后面的值（常量和变量都可以），拷贝给赋值号前面的变量。（当然，和运算符一起出现的时候，赋值号是最后才执行的。）</p>
+<p><div class="mdui-typo">
+  <pre>int main(){
+    int a=6,b,c;
+    c=a;
+    b=c;</a>
+}</pre>
+</div><br>
+这个运算中，a的值被传递给c，c的值再传递给b。
+</p>
+<p>有一种特殊的赋值号：在赋值号前加上一个普通算术运算符，表示先经过相应运算，再把结果赋值给左边的变量。<br>比如，<code>x *= 3</code>，相当于<code>x=x*3</code>。<br>类似地，<code>x += 2</code>相当于<code>x=x+2</code>等。</p>
+<p><div class="mdui-typo">
+  <pre>int main(){
+    int a=6,b=1,c=2;
+    c*=a;
+    b+=c;</a>
+}</pre>
+</div><br>
+这个运算中，先进行<code>c=c*a</code>，再进行<code>b=b+c</code>。最终结果是，c=12，b=13。
+</p>
+<p>在变量前或后添加“++”或“--”，相当于使这个变量增加1或减少1，即“x++”相当于“x=x+1”。<br>自增号的位置不同，功能也略有不同：自增号放在前面，则运算时先返回变量的值，再使自己加减1；放在后面，则先使自己加减1，再返回它的值。<br>（和运算符、赋值号同时出现的时候，自增号优先执行。）</p>
+<p><div class="mdui-typo">
+    <pre>int main(){
+    int a=6,先增,后增;
+    先增=++a;
+    后增=a++;</a>
+}</pre>
+  </div><br>
+这个运算的结果是，先增=7，后增=6。
+</p>
+<p>括号的作用很好理解：不论何种运算，都要优先计算括号内的内容；内层的括号先算。</p>
+<p>以下是例子：</p>
+            <div class="mdui-typo">
+              <pre>
+int main(){
+    int a=1,b=2,c=3;
+    int d=6+( (a+b)*(c%b)+(b+c) );
+}</pre>
+            </div>
+          <br>这个运算的结果是，d等于6+(3×1+5)等于14。
+          </p>
+          <h4 class="doc-article-title">总结<a class="doc-anchor" id="basic"></a></h4>
+          <p>优先级：自增号&gt;运算符&gt;赋值号，运算符又分为算术&gt;关系&gt;逻辑，算术运算符又分为先乘除（余）后加减，同级从左到右算。</p>
+          <h4 class="doc-article-title">* 整数的按位运算<a class="doc-anchor" id="basic"></a></h4>
+          <p class="mdui-text-color-blue">考试时这里不会出太难的内容，让你算的数不超过10，差不多得了。</p>
+          <p>我们回顾一下整数的存储方式：第一位是正负号，0为正，1为负，其余位用二进制原码表示数字。<br>于是，我们引入一组运算符——按位运算符，它通过二进制层面来操作整数。<br>如果只对数字进行操作，没有声明它的类型，它就默认是int(32位，4字节)。</p>
+          <table class="mdui-table">
+            <thead>
+              <tr><th>运算符</th><th>表示法</th><th>描述</th><th>对应函数</th></tr>
+            </thead>
+            <tbody><tr><td>~（按位非）</td><td>~a</td><td>将整数用二进制表示，检查每个二进制位：如果是1则变成0，是0则变成1。</td><td>\(f(x)=-(x+1)\)</td></tr>
+              <tr><td>&lt;&lt;（按位左移）</td><td>a&lt;&lt;b</td><td>将a的每一位都往左移b位，溢出就舍去，少位就补0。</td><td>\(f(x)=x\cdot 2^b\) ，若不溢出</td></tr>
+              <tr><td>&gt;&gt;（按位右移）</td><td>a&gt;&gt;b</td><td>将a的每一位都往右移b位，溢出就舍去，少位就补0。</td><td>\(f(x)=x\cdot 2^{-b}\) ，若不溢出</td></tr>
+              <tr><td>&（按位与）</td><td>a&b</td><td>检查两个数的每组对应位，两个位如果都是1则变1，有一个是0就变0。</td><td>无</td></tr>
+              <tr><td>^（按位异或）</td><td>a^b</td><td>检查两个数的每组对应位，相同则变0，不同则变1。</td><td>无</td></tr>
+              <tr><td>|（按位或）</td><td>a|b</td><td>检查两个数的每组对应位，有一个是1则变1，都是0则变0。</td><td>无</td></tr>
+            </tbody>
+          </table>
+          <p>这几个运算符的优先级从上到下依次降低，最上面的（按位非）优先算。<br>
+            示例：<br><code>8^13=<br>  (27个0)01000<br>^(27个0)10101<br>=(27个0)11101</code>
+          <h4 class="doc-article-title">* 运算优先级表<a class="doc-anchor" id="basic"></a></h4>
+          <p class="mdui-text-color-blue">这里的内容不是必要了解的，仅作资料参考。</p>
+          <table class="mdui-table" style="word-spacing:18px;">
+            <thead>
+              <tr><th>优先级</th><th>符号</th><th>符号两边的运算顺序</th></tr>
+            </thead>
+            <tbody><tr><td>1（最大）</td><td>括号()   数组下标[]   访问成员符.   指向成员符->   自增号(后置)++/--</td><td>左→右</td></tr>
+              <tr><td>2</td><td>自增号(前置)++/-- 长度符sizeof 取址符& 寻址符* 非!   </td><td class="mdui-text-color-red">右→左</td></tr>
+              <tr><td>3</td><td>类型的强制转换</td><td class="mdui-text-color-red">右→左</td></tr>
+              <tr><td>4</td><td>乘* 除/ 余%</td><td>左→右</td></tr>
+              <tr><td>5</td><td>加+ 减-</td><td>左→右</td></tr>
+              <tr><td>6</td><td>大于&gt; 小于&lt; 大于等于&gt;= 小于等于&lt;=</td><td>左→右</td></tr>
+              <tr><td>7</td><td>等于== 不等于!=</td><td>左→右</td></tr>
+              <tr><td>8</td><td>和&&</td><td>左→右</td></tr>
+              <tr><td>9</td><td>或||</td><td>左→右</td></tr>
+              <tr><td>10</td><td>条件符?:</td><td class="mdui-text-color-red">右→左</td></tr>
+              <tr><td>11（最小）</td><td>赋值号= += -= *= /= %=</td><td class="mdui-text-color-red">右→左</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K04">输入输出流<a class="doc-anchor" id="style"></a></h2>
+
+<p>iostream中的两个方法可以让我们在控制台中输入一个量，或者输出字符串以及变量的值。<br>cin的用法：<code>cin&gt;&gt;(变量1)&gt;&gt;(变量2)&gt;&gt;……;</code><br>cout的用法：<code>cout&lt;&lt;(表达式/变量1)&lt;&lt;(表达式/变量2)&lt;&lt;……(endl);</code></p>
+        <p>示例代码：<pre><a class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</a>
+int main(){
+    int a,b,c;
+    cin&gt;&gt;a;
+    c=a;
+    b=c+5;
+    cout&lt;&lt;"结果是"&lt;&lt;b&lt;&lt;endl;
+}</pre>
+当我们在控制台中输入4时，控制台会输出“结果是9”。这endl是换行的意思，它只能加到cout方法的句尾。
+      </p>
+</div>
+      </div>
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K11">循环和判断<a class="doc-anchor" id="style"></a></h2>
+          <h4 class="doc-article-title">循环<a class="doc-anchor" id="basic"></a></h4>
+<p>循环语句是指，给定一个条件表达式，只要条件满足，就不断执行其内部的语句，直到这个条件不成立（值为false）为止。<br>常用的循环有while和for两种：</p>
+<p>while的用法是：<code>while(条件){执行的语句}</code></p>
+<p>for的用法是：<code>for([先声明一个变量];[条件];[语句执行完后的操作]){执行的语句}</code></p>
+<p>示例：<div class="mdui-typo">
+  <pre><a  class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</a>
+int main(){
+    int a=10;
+    while(a&gt;0){
+      cout&lt;&lt;"a目前是"&lt;&lt;a&lt;&lt;endl;
+      a--;
+    }
+}
+</pre>
+</div></p>
+<div class="mdui-typo">
+  <pre><a  class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</a>
+int main(){
+    for(a=10;a&gt;0;a--){
+      cout&lt;&lt;"a目前是"&lt;&lt;a&lt;&lt;endl;
+      a--;
+    }
+}
+</pre>
+</div><br>
+看起来for要比while方便简洁。这两个程序的运行结果相同，你可以思考一下运行结果是什么。
+<p>在循环中，continue语句可以直接跳过本次循环，break语句可以直接结束循环。
+  <div class="mdui-typo">
+    <pre><a  class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</a>
+int main(){
+    int a=5;
+    while(true){
+      a++;
+      if(a%2==0){continue;}
+      if(a&gt;15){break;}
+      cout&lt;&lt;"a目前是"&lt;&lt;a&lt;&lt;endl;
+    }
+}</pre>
+  </div>
+</p>
+</p>
+<h4 class="doc-article-title">判断<a class="doc-anchor" id="basic"></a></h4>
+<p>判断语句是指：给定一个条件表达式，如果条件满足（值为true），就执行其内部的语句；否则，就不执行，或者执行另一段语句。</p>
+<p>判断语句的表示法：<code>if(条件){语句}</code><br>或者：<code>if(条件){语句} else if(条件){另一段语句} else if …… else{第n段语句}</code></p>
+<p>示例：
+<div class="mdui-typo">
+  <pre><a  class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</a>
+int main(){
+    for(a=10;a&gt;0;a--){
+      if(a%2==0){
+          cout&lt;&lt;"现在a是偶数："&lt;&lt;a&lt;&lt;endl;
+        }
+      else{
+          cout&lt;&lt;"现在a是奇数："&lt;&lt;a&lt;&lt;endl;
+        }
+    }
+}
+</pre>
+</div></p>
+<p>还有一种多元判断语句switch，当表达式的可能取值很多时，不妨用switch语句来简化代码：<br><code>switch(表达式){<br>case &lt;值1&gt;...;break;<br>case &lt;值2&gt;...;break;<br>......<br>default:...;break;<br>}</code></p>
+<p>示例：
+<div class="mdui-typo">
+  <pre><a  class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</a>
+int main(){
+    int a;
+    cout&lt;&lt;"请输入1-3里任意一个整数：";
+    switch(a){
+      case 1:cout&lt;&lt;"你输入了1";break;
+      case 2:cout&lt;&lt;"你输入了2";break;
+      case 3:cout&lt;&lt;"你输入了3";break;
+      default:cout&lt;&lt;"？看不懂中国话是吧😅";break;  <a class="mdui-text-color-green">//default是指case的所有值都没取到时，执行的语句。这一句可以有，也可以没有</a>
+    }
+}
+</pre>
+</div></p>
+<h4 class="doc-article-title">* do-while语句<a class="doc-anchor" id="basic"></a></h4>
+<p class="mdui-text-color-blue">以下的内容很少会用到。</p>
+<p>do-while语句是while语句的变体，它表示先执行一次代码块，接下来，如果满足条件，就循环下去，不满足则中断循环。<br>它的用法是，把do放在语句块前面，把while和条件放在语句块后面：<br><code>do{<br>...<br>}while(&lt;条件&gt;)</code></p>
+<p>示例：
+<div class="mdui-typo">
+  <pre>
+    <a  class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</a>
+int main(){
+  int x;
+  cin>>x;
+  do(){
+    if(x&gt;=60){cout&lt;&lt;"及格";}
+    else{cout&gt;&gt;"不及格";x+=5;}
+  }while(x&gt;=60)
+}
+</pre></div></p>
+<h4 class="doc-article-title">* 判断运算符<a class="doc-anchor" id="basic"></a></h4>
+<p class="mdui-text-color-blue">以下的内容知道也行，不知道也行</p>
+<p>编程时，我们经常会用到这样的函数，输入一个值，如果满足一个条件就返回某一个值，不满足就返回另一个值，比如：
+<div class="mdui-typo">
+  <pre>
+int 最大值(int a,int b){
+  if(a>b){return a;}
+  else{return b;}
+}
+</pre></div></p>
+<p>这样的表述有些麻烦，我们可以通过判断运算符来简化操作。<br>它的用法是：<code>&lt;条件&gt;?&lt;满足返回值&gt;:&lt;不满足返回值&gt;</code><br>示例：</p>
+<div class="mdui-typo">
+  <pre>
+int 最大值(int a,int b){
+  return a>b?a:b;
+}
+</pre></div>
+        </div>
+      </div>
+
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K12">函数<a class="doc-anchor" id="style"></a></h2>
+<p>函数可以把多个语句合并在一起并实现相应功能。函数可以让你的代码变得简洁，可读性也更强，也可以避免重复操作的麻烦。</p>
+<p>函数有三个主要部分：返回值类型、内部语句和返回语句（<code>return &lt;值&gt;</code>）。<br>这返回值是指，函数运算完毕后得到的结果，比如函数\(f(θ)=sinθ²\)，输入\(\sqrt \frac {\pi} {2} \)，则返回值就是1。</p>
+<h4 class="doc-article-title">函数的声明与调用<a class="doc-anchor" id="basic"></a></h4>
+<p>函数的声明：<code>&lt;返回值&gt; &lt;名称&gt; (参数1，参数2，...){代码}</code></p>
+<p>函数可以单独调用：<code>名称(参数...);</code>或者作为表达式，如：<code>a=b+王(b);</code></p>
+<p>示例：
+  <div class="mdui-typo">
+    <pre><a  class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</a>
+int 最大值(a,b){
+  if(a&gt;b){
+      return a;
+    }
+  else{
+      return b;
+    }
+}
+int main(){
+  int x,y;
+  cin&gt;&gt;x&gt;&gt;y;
+  cout&lt;&lt;"最大值是"&lt;&lt;最大值(x,y)&lt;&lt;;
+}</pre>
+  </div></p>
+  <p>另外，如果你的函数不需要返回任何值，那么返回值类型为void：
+    <div class="mdui-typo">
+      <pre><a  class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</a>
+<a class="mdui-text-color-green">//有朝一日，你厌烦了天天打那个猥琐的小于号的日子，想要做出点改变……</a>
+void 输出(int a){
+    cout&lt;&lt;a&lt;&lt;endl;
+} 
+int main(){
+    int x,y,z;
+    cin&gt;&gt;x&gt;&gt;y&gt;&gt;z;
+    输出(x);输出(y);输出(z);
+}</pre>
+    </div></p>
+
+        </div>
+      </div>
+
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K13">简单循环判断<a class="doc-anchor" id="style"></a></h2>
+
+          <p class="mdui-text-color-green">J1001 吴亦凡喝酒 难度：NOIP 入门组</p><pre>李白喝酒诗百篇，吴签喝酒屁连天。<br>传说李白出行，每次遇到酒家，总要先喝一半，再添两斗，若是离开后少于十斗，便会一饮而尽。
+吴签在牢房里学李白喝酒，醒来什么都不记得了，只知道最后剩下x斗，且一开始不超过一千斗。问吴签一开始可能有多少斗酒。<p>标准：输入x(7&lt;=x&lt;=9)，每行输出开始时酒的可能值n。</p></pre>
+<p>这题解题方法很明确：设计一个运算循环并输出，当n&gt;1000时，便跳出循环。</p>
+<h4 class="doc-article-title">一、数学建模<a class="doc-anchor" id="basic"></a></h4>
+<p>\(f(x)=2(x-2)\) 。如果x小于1000，便输出x，再进行一次该运算。</p>
+<h4 class="doc-article-title">二、代码实现<a class="doc-anchor" id="basic"></a></h4>
+<div class="mdui-typo">
+  <pre><a  class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</a>
+int main(){
+    int x,n=0;
+    cin&gt;&gt;x;
+    while(n&lt;1000){
+      n-=2;
+      n*=2;
+      cout&lt;&lt;n;
+    }
+}</pre>
+</div></p>
+<br>
+<p class="mdui-text-color-green">J1002 数字倒换 难度：NOIP 入门组</p><pre>大脚超市有一个神奇的电话本，凡是正着写进去的数字，都会倒着显示。
+比如，写进13796734567，便会输出76543769731。
+刘能想通过程序模拟这个电话本的运作方式。<p>标准：输入N（0&lt;N&lt;2×10¹⁰），输出其倒位数字N'。</p></pre>
+  <p>需要注意的是，这里N的最大值超出了int类型的表示范围，所以我们需要使用long int。</p>
+  <h4 class="doc-article-title">一、数学建模<a class="doc-anchor" id="basic"></a></h4>
+  <p>将N除以10，余数就是N'的第一位。再除以10，余数就是N的第二位……重复这个操作，直到N小于0为止。</p>
+  <h4 class="doc-article-title">二、代码实现<a class="doc-anchor" id="basic"></a></h4>
+  <div class="mdui-typo">
+    <pre><a  class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</a>
+int main(){
+    long int N,N1=0;
+    cin>>N;
+    while(n/10!=0){
+      N1+=N%10;
+      N1*=10;
+      N/=10;
+    }
+    N1+=N;
+    cout&lt;&lt;N1;
+}</pre>
+  </div></p>
+          <h4 class="doc-article-title">思考<a class="doc-anchor" id="basic"></a></h4>
+          <p class="mdui-text-color-green">J1003 网吧、打野和数字黑洞 难度：NOIP 普及组-</p><pre>话说学委正在网吧打联盟，突然有人点了首歌。
+唱到“梦里你是无底的黑洞”一句，他突然诗兴大发，想要写一个有关“数字黑洞”的程序。
+（这数字黑洞是指，任意一个四位数，把各位数字重新排列，组成一个最大四位数和一个最小四位数（千位不为0），将最大数和最小数相减，得到一个新的数。
+通常经过很少次运算，就会得到6174。当然也有一些数字不会陷入黑洞中。）
+<p>标准：输入数字x(1000&lt;x&lt;9999)，如果x在5次运算内能得到6174，便输出1，否则输出0。</p></pre>
+           这道题有很多的解决方式。你可以从不同的角度来考虑这个问题。</p><p>（他玩雷恩加尔打野。当然，他输了。）</p>
+        </div>
+      </div>
+    
+
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K14">递归——大事化小，小事化了<a class="doc-anchor" id="style"></a></h2>
+
+          <p class="mdui-text-color-green">J1004 斐波那契 难度：NOIP 入门组</p>    <div class="mdui-typo"><pre>小明今天终于背下来“斐波那契”这四个字了。
+不幸的是，他还把这个数列写错了。他写成的是：
+$$\large a_n=\left\{\begin{array}{l} 1 \ , \ 1\le n\le 3 \\ a_{n-1}+2a_{n-2} , \ n \gt 3 \\\end{array}\right.$$标准：输入N（0&lt;N&lt;100），输出该数列的第N项。</pre>
+              <p>这函数的特点是，要知道第n项，就必须知道n-1项及n-2项的值，而前几项又为定值。</p>
+              <h4 class="doc-article-title">一、数学建模<a class="doc-anchor" id="basic"></a></h4>
+              <p>像上面的函数这样，某一项或几项为定值，其余每项都（由某个对应关系）与其他项有关的函数，叫做递归函数。<br>实现这个算法，只需要令它的返回值表达式调用它本身即可。</p>
+              <h4 class="doc-article-title">二、代码实现<a class="doc-anchor" id="basic"></a></h4>
+              <div class="mdui-typo">
+                <pre><a  class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</a>
+int 斐波那契(int n){
+  if(n&gt;=1 && n&lt;=3){return 1;}
+  else{
+    return 斐波那契(n-1)+斐波那契(n-2);
+  }
+}
+int main(){
+  int a;
+  cin&gt;&gt;a;
+  cout&lt;&lt;斐波那契(a);
+}</pre>
+              </div></p>
+<p>这个函数的执行过程是：首先被调用一次（斐波那契(a)），返回了斐波那契(a-1)+斐波那契(a-2)。<br>于是开始执行斐波那契(a-1)，它的返回值是斐波那契(a-2)+斐波那契(a-3)。……<br>这个过程将不断持续下去，直到所有的函数都返回1为止。</p>
+<h4 class="doc-article-title">思考<a class="doc-anchor" id="basic"></a></h4>
+<p class="mdui-text-color-green">J1005 递归 难度：NOIP 入门组 <div class="mdui-typo"><pre>《C++程序语言设计》3-14 用递归的方法编写函数求n阶勒让德多项式的值，在主程序中实现输入/输出。
+递归公式为：$$ \large  p_n(x)=\left\{\begin{array}{lr} 1&(n=0)\\ x&(n=1) \\ \frac{(2n-1)xp_{n-1}(x) \ - \ (n-1)p_{n-2}(x)}{n} &(n\gt 1) \\\end{array}\right.$$</pre></div>
+</p>
+</div>        
+</div>
+
+<div class="doc-chapter">
+  <div class="mdui-typo">
+    <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K15">暴力枚举——一念通天，神魔无惧<a class="doc-anchor" id="style"></a></h2>
+    <p class="mdui-text-color-green">J1006 克里斯蒂安·哥德巴赫最想删除的视频.avi 难度：NOIP 普及组-</p><div class="mdui-typo">
+    <pre>哥德巴赫给欧拉写过一封信，信里附带着质数猜想的描述，以及一段话：<blockquote><p>“……我想出了一种简单的证法，几乎证明了它；但是我睡了一觉，把它忘了。……希望你能帮我证明。……”</p><footer>——C.哥德巴赫</footer></blockquote>结果欧拉这个直男到死都不知道他在口胡。
+三百年后的今天，人们可以用手机验证哥德巴赫猜想在某一区间内的正确性。
+请你写一个程序，验证哥德巴赫猜想（2以上的偶数都能分解为两个质数之和）对3000以下的偶数成立。<p>标准：对大于2、小于3000的偶数，每行输出一个算式，表示出该数能分解成的两个质数。如果有多组解输出任意一组即可。若无法分解，则该行输出-1。<br>示例输出：<br><code>6=3+3</code><br><code>18=5+13</code></p></pre></div><br>
+<p>这道题有很多种方法来解决。我们可以用这样的解法：<br>对每个偶数n，我们检查区间 \( [3,\frac{n}{2}) \) 中的每一个奇数p，如果某一组p和n-p都是质数，那哥德巴赫猜想就对n成立。<br>特别地，4=2+2，它是唯一一个能被分解为两个偶质数的数。</p>
+<h4 class="doc-article-title">一、数学建模<a class="doc-anchor" id="basic"></a></h4>
+<p>判断一个数是否是质数：对于一个数n，从2开始用各个质数除（我们事先不知道有哪些质数，所以不妨用所有的数来除）。<br>如果一直除到 \( \sqrt{n} \) 都没有能整除的，那么n就是质数。<br>为了使用函数\( f(x)=\sqrt {x} \) ，我们需要引入库cmath：<code>#include &lt;cmath&gt;</code>。</p>
+<h4 class="doc-article-title">二、代码实现<a class="doc-anchor" id="basic"></a></h4>
+<div class="mdui-typo">
+<pre><a  class="mdui-text-color-red">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;</a>
+bool 质数(int a){
+  for(int i=2;i&lt;=<a  class="mdui-text-color-green">sqrt(a)</a>;i++){  <a  class="mdui-text-color-green">//这是cmath库的一个函数，\( sqrt(x)= \sqrt{x} \)</a>
+    if(a%i==0){
+      return false;
+    }
+  }
+  return true;
+}
+void 验证并输出(int a){
+  bool 无解=true;
+  for(int p=1;p&lt;=a/2;p+=2){
+    if(质数(p)&&质数(a-p)){
+      cout&lt;&lt;  a &lt;&lt; "=" &lt;&lt; p &lt;&lt; "+" &lt;&lt; a-p &lt;&lt;endl;
+      无解=false;
+      break;
+    }
+  }
+  if(无解){cout&lt;&lt;-1&lt;&lt;endl;}
+}
+int main(){
+  cout&lt;&lt;"4=2+2"&lt;&lt;endl;
+  for(int n=6;n&lt;3000;n+=2){
+    验证并输出(n);
+  }
+}</pre>
+</div><br>
+这种对所有可能符合要求的数据都进行运算的方法，叫做暴力搜索算法。
+</p>
+<h4 class="doc-article-title">思考<a class="doc-anchor" id="basic"></a></h4>
+<p class="mdui-text-color-green">J1007 八嘎，皇军买东西还需要给钱？ 难度：NOIP 普及组-</p><pre>假如你是李华，你2003年出生，你现在-66岁。
+有一帮鬼子进入了你爷家，但没找到花姑娘，想要屠村。所幸的是，你伪装成了一个少佐。
+大佐让村里所有人排成一排，同时由你指定一个数字p：一排人从左往右报数，从1开始，报到p的人就要枪毙，下一个人继续报1。若队尾报完，下一个数字由队头开始报。
+你爷爷用心灵感应告诉你，这一村人里，恰好有一半是汉奸。<br>而大佐为了尽量避免汉奸被杀，把村民排在左半边，汉奸排在右半边。
+为了不让村民被杀死，你需要想出一个p，让所有汉奸先被杀死，这样你就可以安全地杀掉大佐。
+<p>标准：输入数字n，表示汉奸的个数（村里共有2n人）。输出可能的最小数字p。</p></pre>
+<p>这便是著名的“约瑟夫环问题”（丢手绢问题），人们致力于优化这个问题的解法。现有的大多数解法都使用了暴力枚举的思想。</p>
+
+  </div>
+</div>
 
 
 
 
+      </div>
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K20">数组与结构体<a class="doc-anchor" id="style"></a></h2>
+          <h4 class="doc-article-title">数组<a class="doc-anchor" id="basic"></a></h4>
+          <p>数组是一种可以存储一系列相同类型数据的数据结构。<br>为了创建一个数组，我们需要声明数据类型以及数组长度。数组的声明方式有：<br><code>&lt;类型&gt; &lt;名称&gt;[长度] </code><br><code>&lt;类型&gt; &lt;名称&gt;[(长度)]={元素1,元素2,...} </code><br>
+示例：
+            <div class="mdui-typo">
+              <pre><p class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</p>int main(){
+float a[5];
+int b[]={1,2,3,4,5,6,7};
+char c[10];
+}</pre>
+            </div>
+          </p>
+          <h4 class="doc-article-title">访问数组元素<a class="doc-anchor" id="basic"></a></h4>
+<p>要想访问数组中某个元素，我们可以使用“数组名称+[下标]”来表示。这下标是从0开始的，[0]代表这个数组的第一项，[1]为第二项，以此类推。</p>
+<div class="mdui-typo">
+  <pre><p class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</p>int main(){
+int b[]={1,2,3,4,5,6,7};
+for(int i=2;i&lt;5;i++){
+  cout&lt;&lt;b[i];
+}
+}</pre>
+</div><br>
+<p>这个程序的输出结果是345。</p>
+<h4 class="doc-article-title">多维数组<a class="doc-anchor" id="basic"></a></h4>
+<p>我们可以通过<code>&lt;类型&gt; &lt;名称&gt;[长度1][长度2]...（这里长度不可以省略）</code>声明一个多维数组——它是以n-1维数组为元素的数组。<br>比如，二维数组就是以数组为元素组成的数组。</p>
+<div class="mdui-typo">
+  <pre><p class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</p>int main(){
+int b[3][2]={{1,3},{4,6},{7,8}};
+for(int i=0;i&lt;3;i++){
+  cout&lt;&lt;b[i][0];
+}
+}</pre>
+</div>
+<h4 class="doc-article-title">结构体<a class="doc-anchor" id="basic"></a></h4>
+<p>结构体是一种数据集合，可以让不同类型的数据组合成一个整体，以便归纳和引用。</p>
+<p>结构体的声明方式有<code>struct 名称{...};</code>，或直接附带初始化一些结构体：<code>struct 名称{...}结构1,结构2,...;</code></p>
+<p>要想调用一个结构体的成员数据，需要用到访问成员符“.”。如：<div class="mdui-typo">
+  <pre><p class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</p>int main(){
+struct 人{
+  char 姓名[100];
+  int 年龄;
+  long int 手机号;
+  void 说话(){cout&lt;&lt;"压力马斯内";}
+  };
+人 homo={"田所浩二",24,114514};
+cout&lt;&lt;homo.手机号;
+homo.说话();
+}</pre>
+</div></p>
+        </div>
+
+
+      </div>
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K21">作用域和重载 预处理指令 多文件结构<a class="doc-anchor" id="style"></a></h2>
+          <h4 class="doc-article-title">变量作用域<a class="doc-anchor" id="basic"></a></h4>
+          <p>在程序中定义变量的地方有两种，一是在所有函数之外，这变量叫做全局变量；二是在命名空间/代码块/函数内或函数形参中，这叫做局部变量。<br>其中，局部变量只能在它被定义的代码块内调用，而全局变量能在任何地方被调用。当全局变量和局部变量同名时，最内层的局部变量优先生效。<br>示例：<div class="mdui-typo">
+            <pre><p class="mdui-text-color-red">#include &lt;iostream&gt;
+using namespace std;</p>int a=888;
+int main(){          
+cout&lt;&lt;a&lt;&lt;" ";
+for(int a=0;a&lt;5;a++){
+    cout&lt;&lt;a&lt;&lt;" ";
+  }
+cout&lt;&lt;a&lt;&lt;" ";
+}</pre>
+          </div><br>这程序的输出是 888 0 1 2 3 4 888。</p>
+          <h4 class="doc-article-title">命名空间<a class="doc-anchor" id="basic"></a></h4>
+<p>一个程序通常要引用很多函数库，这使得函数之间不重名变得很困难。我们可以使用“命名空间”来避免函数的重名问题。<br>命名空间可以划分出一个单独的作用域，它可以包含变量、函数、类等。<br>定义一个命名空间：<code>namespace 名称{...}</code><br>为了调用带有命名空间的函数或变量，需要在前面加上命名空间的名称：<code>命名空间名称::成员名称</code><br>使用using语句，可以使该句之后的所有语句默认使用这个命名空间：<code>using namespace 名称</code><div class="mdui-typo">
+  <pre><p class="mdui-text-color-red">#include &lt;iostream&gt;</p>namespace one{
+  int 起个名咋就这么难呢(int a,int b){
+    return a+b;
+  }
+}
+namespace two{
+  int 起个名咋就这么难呢(int a,int b){
+    return a*b;
+  }
+}
+int main(){          
+std::cout&lt;&lt;one::起个名咋就这么难呢(5,7);  <a class="mdui-text-color-green">//（std::cout是什么意思?）</a>
+std::cout&lt;&lt;two::起个名咋就这么难呢(5,7);
+}</pre>
+</div></p>
+<h4 class="doc-article-title">函数的重载<a class="doc-anchor" id="basic"></a></h4>
+<p>重载是指，多个函数在形参类型、个数或返回值有差别的情况下，可以共用同一个名称。如：<div class="mdui-typo">
+  <pre>#include &lt;iostream&gt;
+int mul(int a){return a*a;}
+int mul(int a,int b){return a*b;}
+float mul(float a){return a;}
+float mul(float a,float b){return a+b;}
+int main(){          
+  std::cout&lt;&lt;mul(2);
+  std::cout&lt;&lt;mul(3,4);
+  std::cout&lt;&lt;mul(1.5,1.6);
+}</pre>
+</div></p>
+
+<h4 class="doc-article-title">宏<a class="doc-anchor" id="basic"></a></h4>
+<p>宏是指在程序前的一种预定义语句，它可以按照规则把程序中的一些字符替换为另一种字符。<br>宏的创建：<code>#define 字符1 字符2</code>。示例：<div class="mdui-typo">
+  <pre><p class="mdui-text-color-red">#include &lt;iostream&gt;</p>#define std::cout&lt&lt; 吧
+int main(){          
+吧8;
+吧666;
+}</pre>
+</div><br><p>还有一种带参数的宏：<code>#define 名称(形参1,形参2,...) 表达式</code>。使用时要注意，宏是字符层面上的替换，所以必须仔细思考替换规则。如：</p><div class="mdui-typo">
+  <pre><p class="mdui-text-color-red">#include &lt;iostream&gt;</p>#define mul(a) a*a
+int main(){          
+  std::cout&lt;&lt;mul(2+2);
+}</pre>
+</div><br>这个函数的输出是8，因为mul(2+2)被替换成了2+2*2+2。你可以通过使用<code>#define mul(a) ((a)*(a))</code>来保证输出正确。</p>
+
+          <h4 class="doc-article-title">头文件<a class="doc-anchor" id="basic"></a></h4>
+          <p>当程序中的函数、变量和类的声明比较繁杂时，可以将它们中的一些单独写进头文件中，便于查阅和修改。<br>我们可以通过<code>#include "文件名"</code>或<code>#include &lt;文件名&gt;</code>来引用一个头文件。</p>
+          <p>引用语句的基本原理是，被引用的头文件在编译时，会被完整地复制到引用语句处。因此在使用头文件中的函数、变量时，不需要重新声明。</p>
+          <h4 class="doc-article-title">源文件<a class="doc-anchor" id="basic"></a></h4>
+<p>除了带有main函数的源文件外，还可以添加其他的源文件。<br>在编译时，所有源文件都会被编译，然后进行一次“链接”，这样在文件1中定义的全局变量/函数，在文件2中引用时就不需要再次声明。</p>
+<p>一个理想化的程序结构是，头文件负责函数、变量、类的<strong>声明</strong>，源文件负责<strong>实现</strong>，其中一个源文件负责<strong>调用</strong>。<br>示例：<div class="mdui-typo">
+  <pre><p class="mdui-text-color-green">//这是666.h</p>struct 人{
+  int 年龄;
+  int 电话号;
+  void 说话(const char a[100]);
+  void 打嗝();
+};</pre>
+</div><br>
+<div class="mdui-typo">
+  <pre><p class="mdui-text-color-green">//这是side.h</p>#include &lt;iostream&gt;
+#include "666.h"
+using namespace std;
+人::说话(const char a[100]){
+  cout&lt;&lt;a;
+}
+人::打嗝(){
+  cout&lt;&lt;"嗝";
+}</pre>
+</div><br>
+<div class="mdui-typo">
+  <pre><p class="mdui-text-color-green">//这是main.h</p>#include "666.h"
+int main(){
+  人 homo={24,114514};
+  homo.说话("压力马斯内");
+}</pre>
+</div>
+</p>
+<h4 class="doc-article-title">* 函数的默认值<a class="doc-anchor" id="basic"></a></h4>
+<p>在函数形参表中给形参“赋值”，相当于给它添加了默认值。如果某个形参缺失，则会用默认值自动补全。</p>
+<div class="mdui-typo">
+  <pre>#include &lt;iostream&gt;
+void 输出(const char a[100]="啊？"){
+  std::cout&lt;&lt;a;
+}
+int main(){
+  输出();
+  输出("哦");
+}</pre>
+</div>
+        </div>
+      </div>
+
+
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K22">冒泡排序<a class="doc-anchor" id="style"></a></h2>
+
+          <p class="mdui-text-color-green">J1008 排序 难度：NOIP 普及组-</p><pre>那啥，我太累了，不想编题干了。
+            <p>标准：输入数字n，以及n个正整数。接下来每行将各个数从大到小输出。</p></pre>
+<p>我们引入冒泡排序算法——冒泡排序是对一组数字排序的最简便方法之一。</p>
+<p>这个算法的思想是：</p>
+<ul>
+<li>1、对于一排n个无规律的数字，进行如下操作：<br>从左到右，如果前一个元素小于（大于）后一个，就将他们交换位置。重复这个操作（n-1次），则最小（大）的数字会“浮”到最右边；</li>
+<li>2、再执行一次这样的操作，这次“交换位置”执行了（n-2）次。</li>
+<li>3、再执行一次这样的操作，这次“交换位置”执行了（n-3）次。……</li>
+</ul>
+<p>代码表示如下：            <div class="mdui-typo">
+  <pre>#include &lt;iostream&gt;
+using namespace std;
+void 从小到大排序(int a[], int 长度){
+    for (int i = 0; i &lt; 长度 - 1; i++)
+      for (int j = 0; j &lt; 长度 - 1 - i; j++){
+          if (a[j] > a[j + 1]){
+              int 存储;
+              存储 = a[j];
+              a[j] = a[j+1];
+              a[j+1] = 存储; <a class="mdui-text-color-green">//交换两个元素</a>
+          }
+      }
+}
+int main(){
+int n; cin>>n; int *a=new int[n];
+
+for(int i=0;i&lt;n;i++){
+  cin&gt;&gt;a[i];
+  }
+从小到大排序(a,n);
+
+for(int i=0;i&lt;n;i++){
+    cout&lt;&lt;a[i]&lt;&lt;endl;
+  }
+}</pre>
+</div></p>
+        </div>
+      </div>
+      <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K30">引用和指针<a class="doc-anchor" id="style"></a></h2>
+
+          <h4 class="doc-article-title">取地址和寻地址<a class="doc-anchor" id="basic"></a></h4>
+          <p>取地址符（&）是一种运算符，它的运算结果是变量在内存中的位置。<br>寻地址符（*）则相反，它的运算结果是地址在内存中对应的变量。<div class="mdui-typo">
+            <pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+  int x=666;
+  cout&lt;&lt;&amp;x;
+  cout&lt;&lt;*(&x);
+}</pre></div></p>
+<p>这个程序输出了x所在的地址以及666。</p>
+<h4 class="doc-article-title">地址变量（指针）<a class="doc-anchor" id="basic"></a></h4>
+<p>在变量类型之后加一个“*”，则声明的变量将成为这个类型的地址变量（指针）。它将只能存储该类型变量的地址。<br>若地址变量中存储着变量x的地址，它就叫作“指向变量x的指针”。<div class="mdui-typo"><pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+  int x=666;
+  int* y=&amp;x;
+  cout&lt;&lt;y;
+  cout&lt;&lt;*y;
+}</pre></div></p>
+  <p>这个程序输出了x所在的地址以及666。</p>
+  <h4 class="doc-article-title">指针偏移 数组结构 指针与数组<a class="doc-anchor" id="basic"></a></h4>
+<p>指针的偏移是指，将指针加减一个整数，则它的内存地址将前移/后移这些位。如：<div class="mdui-typo"><pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+  int x=666;
+  int* y=&amp;x;
+  cout&lt;&lt;y+0;
+  cout&lt;&lt;y+2;
+}</pre></div></p><p>这将输出x的地址以及它的地址+2后的位置。</p>
+<p>接下来我们观察数组的结构。当我们声明一个数组p，则p的值就是p的第一项p[0]的地址，p[1]的地址就是p+1，p[2]的地址就是p+2……<br>因此，我们使用p[x]访问数组元素，它就等同于*(p+x)。<br>相同地，如果我们想使用地址p右移x位地址对应的变量时，可以用p[x]来代替*(p+x)。<div class="mdui-typo"><pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+  int x=666;
+  int* y=&amp;x;
+  cout&lt;&lt;y+0;
+  cout&lt;&lt;y+2;
+}</pre></div></p>
+<h4 class="doc-article-title">指针的应用<a class="doc-anchor" id="basic"></a></h4>
+<p>我们想定义一个函数，它可以交换数组中两个元素的值。<div class="mdui-typo"><pre>#include &lt;iostream&gt;
+using namespace std;<p class="mdui-text-color-deep-orange">void 交换(int a, int b){
+  int 存储;
+  存储=a;
+  a=b;
+  b=存储;
+}</p>int main(){
+  int x[]={1,2,3,4};
+  交换(x[0],x[3]);
+  for(int i=0;i&lt;4;i++){
+    cout&lt;&lt;x[i];
+  }
+}</pre></div></p><p>
+  你不会以为这程序会输出4231吧？😅实际上，形参的值被传递进函数后，实参并没有被修改。<br>但我们可以使用地址变量，对实参进行“降维打击”：<div class="mdui-typo"><pre>#include &lt;iostream&gt;
+using namespace std;
+void 交换(int* a, int* b){
+  int 存储=0;
+  存储 = *a;
+  *a = *b;
+  *b = 存储;
+}
+int main(){
+  int x[]={1,2,3,4};
+  交换(x,x+3);
+  for(int i=0;i&lt;4;i++){
+  cout&lt;&lt;x[i];
+  }
+}</pre></div>
+</p><p>这函数中的两个形参是地址变量，它们的值就是数组中两个元素的地址。<br>因此，*a、*b等同于数组中的两个项x[0]和x[3]，改变它们，数组中的元素也会同步改变。<br>现在，输出值是4231了。</p>
+        </div>
+      </div>
 
 
 
 
     </div>
-
   </div>
   </body></body>
 
 </html>
+<!-----------------------
+  <div class="doc-chapter">
+        <div class="mdui-typo">
+          <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">引用和指针<a class="doc-anchor" id="style"></a></h2>
+          <h4 class="doc-article-title">时兴的IDE<a class="doc-anchor" id="basic"></a></h4>
+          <p></p>
+
+<div class="mdui-typo">
+<pre>#include &lt;iostream&gt;
+using namespace std;
+</pre>
+</div>
+
+        </div>
+      </div>
+    
+    -->
