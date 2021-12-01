@@ -398,7 +398,7 @@ int main(){
           <p class="mdui-text-color-blue">这里的内容不是必要了解的，仅作资料参考。</p>
           <table class="mdui-table" style="word-spacing:18px;">
             <thead>
-              <tr><th>优先级</th><th>符号</th><th>符号两边的运算顺序</th></tr>
+              <tr><th>优先级</th><th>符号</th><th>同级结合顺序</th></tr>
             </thead>
             <tbody><tr><td>1（最大）</td><td>括号()   数组下标[]   访问成员符.   指向成员符->   自增号(后置)++/--</td><td>左→右</td></tr>
               <tr><td>2</td><td>自增号(前置)++/-- 长度符sizeof 取址符& 寻址符* 非!   </td><td class="mdui-text-color-red">右→左</td></tr>
@@ -458,7 +458,6 @@ using namespace std;</a>
 int main(){
     for(a=10;a&gt;0;a--){
       cout&lt;&lt;"a目前是"&lt;&lt;a&lt;&lt;endl;
-      a--;
     }
 }
 </pre>
@@ -522,7 +521,7 @@ int main(){
 <p>示例：
 <div class="mdui-typo">
   <pre>
-    <a  class="mdui-text-color-red">#include &lt;iostream&gt;
+<a  class="mdui-text-color-red">#include &lt;iostream&gt;
 using namespace std;</a>
 int main(){
   int x;
@@ -557,9 +556,9 @@ int 最大值(int a,int b){
         <div class="mdui-typo">
           <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K12">函数<a class="doc-anchor" id="style"></a></h2>
 <p>函数可以把多个语句合并在一起并实现相应功能。函数可以让你的代码变得简洁，可读性也更强，也可以避免重复操作的麻烦。</p>
-<p>函数有三个主要部分：返回值类型、内部语句和返回语句（<code>return &lt;值&gt;</code>）。<br>这返回值是指，函数运算完毕后得到的结果，比如函数\(f(θ)=sinθ²\)，输入\(\sqrt \frac {\pi} {2} \)，则返回值就是1。</p>
+<p>函数有三个主要部分：返回值类型、内部语句和返回语句（<code>return 值</code>）。<br>这返回值是指，函数运算完毕后得到的结果，比如函数\(f(θ)=sinθ²\)，输入\(\sqrt \frac {\pi} {2} \)，则返回值就是1。</p>
 <h4 class="doc-article-title">函数的声明与调用<a class="doc-anchor" id="basic"></a></h4>
-<p>函数的声明：<code>&lt;返回值&gt; &lt;名称&gt; (参数1，参数2，...){代码}</code></p>
+<p>函数的声明：<code>&lt;返回值类型&gt; &lt;名称&gt; (参数1，参数2，...){代码}</code></p>
 <p>函数可以单独调用：<code>名称(参数...);</code>或者作为表达式，如：<code>a=b+王(b);</code></p>
 <p>示例：
   <div class="mdui-typo">
@@ -601,8 +600,8 @@ int main(){
         <div class="mdui-typo">
           <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" name="K13">简单循环判断<a class="doc-anchor" id="style"></a></h2>
 
-          <p class="mdui-text-color-green">J1001 吴亦凡喝酒 难度：NOIP 入门组</p><pre>李白喝酒诗百篇，吴签喝酒屁连天。<br>传说李白出行，每次遇到酒家，总要先喝一半，再添两斗，若是离开后少于十斗，便会一饮而尽。
-吴签在牢房里学李白喝酒，醒来什么都不记得了，只知道最后剩下x斗，且一开始不超过一千斗。问吴签一开始可能有多少斗酒。<p>标准：输入x(7&lt;=x&lt;=9)，每行输出开始时酒的可能值n。</p></pre>
+          <p class="mdui-text-color-green">J1001 吴亦凡喝酒 难度：NOIP 入门组</p><pre>传说李白出行，每次遇到酒家，总要先喝一半，再添两斗，若是离开后少于十斗，便会一饮而尽。
+吴签在牢房里学李白喝酒，醒来什么都不记得了，只知道最后剩下x斗，且一开始不超过一千斗。问吴签一开始可能有多少斗酒。<p>标准：输入x(7&le;x&le;9)，每行输出开始时酒的可能值n。</p></pre>
 <p>这题解题方法很明确：设计一个运算循环并输出，当n&gt;1000时，便跳出循环。</p>
 <h4 class="doc-article-title">一、数学建模<a class="doc-anchor" id="basic"></a></h4>
 <p>\(f(x)=2(x-2)\) 。如果x小于1000，便输出x，再进行一次该运算。</p>
@@ -611,12 +610,12 @@ int main(){
   <pre><a  class="mdui-text-color-red">#include &lt;iostream&gt;
 using namespace std;</a>
 int main(){
-    int x,n=0;
+    int x;
     cin&gt;&gt;x;
-    while(n&lt;1000){
-      n-=2;
-      n*=2;
-      cout&lt;&lt;n;
+    while(x&lt;1000){
+      x-=2;
+      x*=2;
+      cout&lt;&lt;x;
     }
 }</pre>
 </div></p>
@@ -649,7 +648,7 @@ int main(){
 （这数字黑洞是指，任意一个四位数，把各位数字重新排列，组成一个最大四位数和一个最小四位数（千位不为0），将最大数和最小数相减，得到一个新的数。
 通常经过很少次运算，就会得到6174。当然也有一些数字不会陷入黑洞中。）
 <p>标准：输入数字x(1000&lt;x&lt;9999)，如果x在5次运算内能得到6174，便输出1，否则输出0。</p></pre>
-           这道题有很多的解决方式。你可以从不同的角度来考虑这个问题。</p><p>（他玩雷恩加尔打野。当然，他输了。）</p>
+           这道题有很多的解决方式。你可以从不同的角度来考虑这个问题。</p>
         </div>
       </div>
     
