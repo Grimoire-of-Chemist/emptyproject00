@@ -822,7 +822,8 @@ cout&lt;&lt;a&lt;&lt;" ";
           </div><br>这程序的输出是 888 0 1 2 3 4 888。</p>
           <h4 class="doc-article-title">命名空间<a class="doc-anchor" id="basic"></a></h4>
 <p>一个程序通常要引用很多函数库，这使得函数之间不重名变得很困难。我们可以使用“命名空间”来避免函数的重名问题。<br>命名空间可以划分出一个单独的作用域，它可以包含变量、函数、类等。<br>定义一个命名空间：<code>namespace 名称{...}</code><br>为了调用带有命名空间的函数或变量，需要在前面加上命名空间的名称：<code>命名空间名称::成员名称</code><br>使用using语句，可以使该句之后的所有语句默认使用这个命名空间：<code>using namespace 名称</code><div class="mdui-typo">
-  <pre><p class="mdui-text-color-red">#include &lt;iostream&gt;</p>namespace one{
+  <pre><a class="mdui-text-color-red">#include &lt;iostream&gt;</a>
+namespace one{
   int 起个名咋就这么难呢(int a,int b){
     return a+b;
   }
@@ -853,10 +854,10 @@ int main(){
 
 <h4 class="doc-article-title">宏<a class="doc-anchor" id="basic"></a></h4>
 <p>宏是指在程序前的一种预定义语句，它可以按照规则把程序中的一些字符替换为另一种字符。<br>宏的创建：<code>#define 字符1 字符2</code>。示例：<div class="mdui-typo">
-  <pre><p class="mdui-text-color-red">#include &lt;iostream&gt;</p>#define std::cout&lt&lt; 吧
+  <pre><p class="mdui-text-color-red">#include &lt;iostream&gt;</p>#define 吧 std::cout&lt&lt;
 int main(){          
-吧8;
-吧666;
+吧 8;
+吧 666;
 }</pre>
 </div><br><p>还有一种带参数的宏：<code>#define 名称(形参1,形参2,...) 表达式</code>。使用时要注意，宏是字符层面上的替换，所以必须仔细思考替换规则。如：</p><div class="mdui-typo">
   <pre><p class="mdui-text-color-red">#include &lt;iostream&gt;</p>#define mul(a) a*a
