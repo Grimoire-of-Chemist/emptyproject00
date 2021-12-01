@@ -670,7 +670,7 @@ using namespace std;</a>
 int 斐波那契(int n){
   if(n&gt;=1 && n&lt;=3){return 1;}
   else{
-    return 斐波那契(n-1)+斐波那契(n-2);
+    return 斐波那契(n-1)+2*斐波那契(n-2);
   }
 }
 int main(){
@@ -679,7 +679,7 @@ int main(){
   cout&lt;&lt;斐波那契(a);
 }</pre>
               </div></p>
-<p>这个函数的执行过程是：首先被调用一次（斐波那契(a)），返回了斐波那契(a-1)+斐波那契(a-2)。<br>于是开始执行斐波那契(a-1)，它的返回值是斐波那契(a-2)+斐波那契(a-3)。……<br>这个过程将不断持续下去，直到所有的函数都返回1为止。</p>
+<p>这个函数的执行过程是：首先被调用一次（斐波那契(a)），返回了斐波那契(a-1)+2*斐波那契(a-2)。<br>于是开始执行斐波那契(a-1)，它的返回值是斐波那契(a-2)+2*斐波那契(a-3)。……<br>这个过程将不断持续下去，直到所有的函数都返回1为止。</p>
 <h4 class="doc-article-title">思考<a class="doc-anchor" id="basic"></a></h4>
 <p class="mdui-text-color-green">J1005 递归 难度：NOIP 入门组 <div class="mdui-typo"><pre>《C++程序语言设计》3-14 用递归的方法编写函数求n阶勒让德多项式的值，在主程序中实现输入/输出。
 递归公式为：$$ \large  p_n(x)=\left\{\begin{array}{lr} 1&(n=0)\\ x&(n=1) \\ \frac{(2n-1)xp_{n-1}(x) \ - \ (n-1)p_{n-2}(x)}{n} &(n\gt 1) \\\end{array}\right.$$</pre></div>
